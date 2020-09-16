@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Header";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Tasks from "./Tasks";
+import User from "./User";
+import Home from "./Home";
+import React, { Component } from "react";
+import Login from "./Login";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    display: false,
+  };
+
+  displayPages = () => {
+    this.setState({
+      display: true,
+    });
+  };
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          {this.state.display ? (
+            <>
+              <Header />
+              <Switch>
+                <Route path="/Tasks">
+                  <Tasks />
+                </Route>
+
+                <Route path="/User">
+                  <User />
+                </Route>
+
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </>
+          ) : (
+            <Login displayPages={this.displayPages} />
+          )}
+        </div>
+      </Router>
+    );
+  }
 }
-
-export default App;

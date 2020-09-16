@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+  padding: 30px;
+  height: max-content;
+}
+
+.title {
+  width: 200px;
+}
+
+.primary {
+  margin-top: 20px;
+}
+
+.tasks {
+  height: 800px;
+}
+
+.primary {
+  position: relative;
+  margin-left: -100px;
+}

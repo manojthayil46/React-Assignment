@@ -1,0 +1,19 @@
+.box {
+  height: 200px;
+  text-align: center;
+  position: fixed;
+  background-color: #d3d3d3;
+  z-index: 500;
+  left: 35%;
+  top: 20%;
+  box-sizing: border-box;
+  width: 35%;
+  border-radius: 10px;
+}
+
+.input__values {
+  height: 12px;
+  padding: 5px;
+  border: none;
+  margin: 10px;
+}
