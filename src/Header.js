@@ -9,7 +9,7 @@ export default class header extends Component {
       <div className="header">
         <img src={logo} className="header__logo" alt="logo" />
         <div className="header__items">
-          <NavLink exact to="/" activeClassName="active">
+          <NavLink exact to="/Home" activeClassName="active">
             <div className="header__options">Home</div>
           </NavLink>
 

@@ -1,6 +1,11 @@
 import "./App.css";
 import Header from "./Header";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import Tasks from "./Tasks";
 import User from "./User";
 import Home from "./Home";
@@ -12,9 +17,9 @@ export default class App extends Component {
     display: false,
   };
 
-  displayPages = () => {
+  displayPages = (value) => {
     this.setState({
-      display: true,
+      display: value,
     });
   };
 
@@ -35,12 +40,16 @@ export default class App extends Component {
                 </Route>
 
                 <Route path="/">
+                  <Redirect to="/Home" />
                   <Home />
                 </Route>
               </Switch>
             </>
           ) : (
-            <Login displayPages={this.displayPages} />
+            <>
+              <Redirect to="/Login" />
+              <Login displayPages={this.displayPages} />
+            </>
           )}
         </div>
       </Router>

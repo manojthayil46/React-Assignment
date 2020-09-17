@@ -1,9 +1,11 @@
 import { Button } from "@material-ui/core";
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 
 export default class User extends Component {
   state = {
     changeDiv: false,
+    navigate: false,
   };
 
   changeDiv = () => {
@@ -12,7 +14,14 @@ export default class User extends Component {
     });
   };
 
+  logout = () => {
+    this.setState({
+      navigate: true,
+    });
+  };
+
   render() {
+    if (this.state.navigate) return <Redirect to="/Login" />;
     return (
       <>
         {this.state.changeDiv ? (
@@ -40,7 +49,7 @@ export default class User extends Component {
             &nbsp;
             <Button
               variant="contained"
-              onClick={this.closeModal}
+              onClick={this.logout}
               color="secondary"
               className="modal__button"
             >

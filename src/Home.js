@@ -24,14 +24,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-// function Home() {
-//   return (
-//     <div>
-//       <Dropdown setText = {this}/>
-//       {/* <Information />  */}
-//     </div>
-//   );
-// }
-
-// export default Home;

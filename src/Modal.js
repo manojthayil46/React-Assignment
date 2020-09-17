@@ -13,6 +13,8 @@ class Modal extends Component {
     this.props.closeModal(event) && this.props.closeModal();
   };
 
+  /* This is used to handle input values  from a modal*/
+
   handleInput = (event) => {
     let value = event.target.value;
     switch (event.target.name) {
@@ -33,12 +35,14 @@ class Modal extends Component {
     }
   };
 
+  /*This submits the modal value to its parent*/
   handleSubmit = () => {
     this.props.handleSubmit(
       this.state.id,
       this.state.title,
       this.state.completed
     );
+    this.closeModal();
   };
 
   render() {

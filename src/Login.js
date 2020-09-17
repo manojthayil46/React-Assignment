@@ -10,7 +10,7 @@ import "./Login.css";
 
 export default class Login extends Component {
   handleLogin = () => {
-    this.props.displayPages();
+    this.props.displayPages(true);
   };
   render() {
     return (
@@ -24,11 +24,13 @@ export default class Login extends Component {
           <InputLabel htmlFor="my-input" required>
             Email address
           </InputLabel>
+
           <Input
             type="password"
             id="my-input"
             aria-describedby="my-helper-text"
           />
+
           <FormHelperText id="my-helper-text">
             We'll never share your password
           </FormHelperText>
